@@ -6,12 +6,12 @@ This project was carried out to create an app that allows the user to create a p
   
 ## Table of Contents
   
-- ![Installation](#installation)
-- ![Usage](#usage)
-- ![License](#license)
-- ![Contributing](#contributing)
-- ![Tests](#ests)
-- ![Questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#ests)
+- [Questions](#questions)
   
 ## Installation
   
