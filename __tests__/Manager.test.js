@@ -18,3 +18,5 @@ test("Can get office number via getOffice()", () => {
     const e = new Manager("Foo", 1, "test@test.com", testValue);
     expect(e.getOffice()).toBe(testValue);
 });
+
+//Installed Inquirer and Jest using NPM. Ran tests and they all passed.
