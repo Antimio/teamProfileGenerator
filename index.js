@@ -114,3 +114,39 @@ function writeToFile(fileName, data) {
         console.log("Congratulations! Your HTML team sytucture file has been created! Check it out in your output folder!");
     });
 }
+
+const team = [];
+
+function runProgram() {
+    inquirer
+        .prompt(questions_manager)
+        .then((managerAnswers) => {
+
+            const manager = new Manager(managerAnswers.manager_name, managerAnswers.manager_ID, managerAnswers.manager_email, managerAnswers.manager_officeNumber);
+
+            team.push(manager);
+
+            function inquireAgain() {
+                inquirer
+                    .prompt(questions_team)
+                    .then((teamAnswers) => {
+
+                        if (teamAnswers.role === "Add an engineer") {
+                            const engineer = new Engineer(teamAnswers.engineer_name, teamAnswers.engineer_ID, teamAnswers.engineer_email, teamAnswers.engineer_github);
+                            team.push(engineer);
+                            inquireAgain();
+                        } else if (teamAnswers.role === "Add an intern") {
+                            const intern = new Intern(teamAnswers.intern_name, teamAnswers.intern_ID, teamAnswers.intern_email, teamAnswers.intern_school);
+                            team.push(intern);
+                            inquireAgain();
+                        } else {
+                            writeToFile(outputPath, render(team));
+                        }
+
+                    })
+            }
+            inquireAgain();
+        })
+}
+
+runProgram()
