@@ -10,7 +10,7 @@ This project was carried out to create an app that allows the user to create a p
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#ests)
+- [Tests](#tests)
 - [Questions](#questions)
   
 ## Installation
