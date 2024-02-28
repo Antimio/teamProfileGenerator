@@ -35,3 +35,82 @@ const questions_manager = [{
         message: "What's the team manager's office number?:"
     }
 ]
+
+
+const questions_team = [{
+        name: "role",
+        type: "rawlist",
+        message: "Would you like to add a team member at this stage? If so, what is the role of the new team member?:",
+        choices: ["Add an engineer", "Add an intern", "No, I'm done bulding the team. Exit application!"],
+        default: "No, I'm done bulding the team. Exit application!"
+    },
+    {
+        name: "engineer_name",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an engineer";
+        },
+        message: "What's this engineer's name?:",
+    },
+    {
+        name: "engineer_ID",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an engineer";
+        },
+        message: "What's this engineer's employee ID?:",
+    }, {
+        name: "engineer_email",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an engineer";
+        },
+        message: "What's this engineer's email address?:",
+    }, {
+        name: "engineer_github",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an engineer";
+        },
+        message: "What's this engineer's GitHub username?:",
+    },
+    {
+        name: "intern_name",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an intern";
+        },
+        message: "What's this intern's name?:",
+    }, {
+        name: "intern_ID",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an intern";
+        },
+        message: "What's this intern's employee ID?:",
+    }, {
+        name: "intern_email",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an intern";
+        },
+        message: "What's this intern's email address?:",
+    }, {
+        name: "intern_school",
+        type: "input",
+        when: function(answers) {
+            return answers.role === "Add an intern";
+        },
+        message: "What's this intern's school?:",
+    }
+]
+
+function writeToFile(fileName, data) {
+
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Congratulations! Your HTML team sytucture file has been created! Check it out in your output folder!");
+    });
+}
